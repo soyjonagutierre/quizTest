@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-image: radial-gradient(circle, #5c5c5c 0.05%, #0c0b18 20%);
+    color: rgb(221, 221, 221);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+@keyframes rotating-light {
+    0% {
+        background-position: top left;
+    }
+    25% {
+        background-position: top right;
+    }
+    50% {
+        background-position: bottom right;
+    }
+    75% {
+        background-position: bottom left;
+    }
+    100% {
+        background-position: top left;
+    }
+}
+
+.rotating-light-effect::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    background: radial-gradient(circle, #A03A55 10%, transparent 10%);
+    background-size: 200% 200%;
+    border-radius: inherit;
+    animation: rotating-light 4s linear infinite;
+}
